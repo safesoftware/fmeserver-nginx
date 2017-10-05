@@ -82,7 +82,7 @@ Remove the default site:
 ```
 sudo rm /etc/nginx/sites-enabled/default
 ```
-Create a symlink to the FME Server configuration:
+Copy the FME Server configuration:
 ```
 sudo cp /etc/nginx/fmeserver/fmeserver.conf /etc/nginx/sites-enabled/fmeserver.conf
 ```
