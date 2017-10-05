@@ -1,4 +1,6 @@
 # Configure FME Server for SSL using NGINX as a reverse proxy
+Here is our blog post about the benefits of using NGINX as a revers proxy for FME Server:
+https://blog.safe.com/2016/12/overview-fme-cloud-team-leveraging-nginx-fme-server-deliver-enhanced-performance/
 ## Ubuntu 16.04
 ### Install NGINX and create SSL certificate
 #### Install NGINX
