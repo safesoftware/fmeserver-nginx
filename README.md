@@ -74,7 +74,7 @@ Place the following files in the folder:
 /etc/nginx/fmeserver/nginx-proxy.conf
 /etc/nginx/fmeserver/fmeserver.conf
 ```
-Modify the file `/opt/nginx/fmeserver.conf` by changing all 3 occurrences of `server_name` to the host name that was used for the SSL certificate and the FME Server installation.
+Modify the file `/etc/nginx/fmeserver/fmeserver.conf` by changing all 3 occurrences of `server_name` to the host name that was used for the SSL certificate and the FME Server installation.
 #### Enable the reverse proxy for FME Server
 Remove the default site:
 ```
