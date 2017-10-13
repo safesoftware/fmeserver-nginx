@@ -41,7 +41,9 @@ Scheme=”https”
 address=”127.0.0.1”
 ```
 Modify the file `/opt/fmeserver/Utilities/tomcat/webapps/fmeserver/WEB-INF/conf/propertiesFile.properties` by adding the following line at the end: `WEB_SOCKET_SERVER_PORT=443`
+
 Modify the file `opt/fmeserver/Server/fmeWebSocketConfig.txt` by changing `WEBSOCKET_REQUEST_PORT=7078` to `WEBSOCKET_REQUEST_PORT=8078`
+
 Pre-gzip all fmeserver js and css files:
 ```
 sudo find /opt/fmeserver/Utilities/tomcat/webapps/ -type f -name '*.js' -exec gzip -k -9 {} \;
@@ -61,7 +63,7 @@ sudo /opt/fmeserver/Server/startServer.sh
 Run these comamnds:
 ```
 sudo openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
-sudo chmod 400 /etc/ssl/certs/dhparam.pem
+sudo chmod 400 /etc/nginx/ssl/dhparam.pem
 ```
 #### Create & modify NGINX configuration files
 Create a folder:
@@ -74,6 +76,7 @@ Place the following files in the folder:
 /etc/nginx/fmeserver/ssl.conf
 /etc/nginx/fmeserver/websocket.conf
 /etc/nginx/fmeserver/nginx-proxy.conf
+/etc/nginx/fmeserver/mail.conf
 /etc/nginx/fmeserver/fmeserver.conf
 ```
 Modify the file `/etc/nginx/fmeserver/fmeserver.conf` by changing all 3 occurrences of `server_name` to the host name that was used for the SSL certificate and the FME Server installation.
@@ -91,4 +94,4 @@ Restart NGINX
 sudo service nginx restart
 ```
 ### Test configuration
-Got to FME Server in your browser (for self-signed certificates the site will be show as not secure). Update the Service URLs to use https://.
+Got to FME Server in your browser (for self-signed certificates the site will be show as not secure). Update the Service URLs to use https://. Now you can run Jobs and test the websocket server with the topic monitoring tool.
