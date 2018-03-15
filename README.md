@@ -34,11 +34,11 @@ Start FME Server:
 sudo /opt/fmeserver/Server/startServer.sh
 ```
 #### File modifications
-Modify the file `/opt/fmeserver/Utilities/tomcat/conf/server.xml` by adding these attributes to the connector element with the `port=”8080”` attribute:
+Modify the file `/opt/fmeserver/Utilities/tomcat/conf/server.xml` by adding these attributes to the connector element with the `port="8080"` attribute:
 ```
-proxyPort=”443”
-Scheme=”https”
-address=”127.0.0.1”
+proxyPort="443"
+Scheme="https"
+address="127.0.0.1"
 ```
 Modify the file `/opt/fmeserver/Utilities/tomcat/webapps/fmeserver/WEB-INF/conf/propertiesFile.properties` by adding the following line at the end: `WEB_SOCKET_SERVER_PORT=443`
 
