@@ -1,7 +1,7 @@
 # Configure FME Server for SSL using NGINX as a reverse proxy
 Here is our blog post about the benefits of using NGINX as a revers proxy for FME Server:
 https://blog.safe.com/2016/12/overview-fme-cloud-team-leveraging-nginx-fme-server-deliver-enhanced-performance/
-## Ubuntu 16.04
+## Ubuntu 20.04
 ### Install NGINX and create SSL certificate
 #### Install NGINX
 Run the following commands:
@@ -24,9 +24,9 @@ sudo apt-get install zip gzip
 ```
 Download & install FME Server:
 ```
-sudo wget https://downloads.safe.com/fme/2017/fme-server-2017.1.1-b17650-linux-x64~ubuntu.16.04.run
-sudo chmod +x fme-server-2017.1.1-b17650-linux-x64~ubuntu.16.04.run
-sudo ./fme-server-2017.1.1-b17650-linux-x64~ubuntu.16.04.run
+sudo wget https://downloads.safe.com/fme/beta/fme-server-b21211-linux-x64~ubuntu.20.04.run
+sudo chmod +x fme-server-b21211-linux-x64~ubuntu.20.04.run
+sudo ./fme-server-b21211-linux-x64~ubuntu.20.04.run
 ```
 Make sure that the host name is similar to the common name specified for the SSL certificate. The port needs to be 8080. Port 80 is already used by NGINX.
 Start FME Server:
@@ -42,7 +42,7 @@ address="127.0.0.1"
 ```
 Modify the file `/opt/fmeserver/Utilities/tomcat/webapps/fmeserver/WEB-INF/conf/propertiesFile.properties` by adding the following line at the end: `WEB_SOCKET_SERVER_PORT=443`
 
-Modify the file `opt/fmeserver/Server/fmeWebSocketConfig.txt` by changing `WEBSOCKET_REQUEST_PORT=7078` to `WEBSOCKET_REQUEST_PORT=8078`
+Modify the file `/opt/fmeserver/Server/fmeWebSocketConfig.txt` by changing `WEBSOCKET_REQUEST_PORT=7078` to `WEBSOCKET_REQUEST_PORT=8078`
 
 Pre-gzip all fmeserver js and css files:
 ```
