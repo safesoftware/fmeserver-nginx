@@ -1,4 +1,6 @@
-# :warning: This repository is no longer maintained and should not be used. The FME Flow Linux installer now deploys FME Flow with NGINX as a reverse proxy by default. Please refer to the [documentation](https://docs.safe.com/fme/html/FME-Flow/AdminGuide/configuring_for_https.htm) for more information.
+# :warning: This repository is no longer maintained and should not be used. The FME Flow Linux installer now deploys FME Flow with NGINX as a reverse proxy by default. Please refer to the [FME Flow documentation](https://docs.safe.com/fme/html/FME-Flow/AdminGuide/configuring_for_https.htm) for more information.
+
+---
 
 # Configure FME Server for SSL using NGINX as a reverse proxy
 Here is our blog post about the benefits of using NGINX as a revers proxy for FME Server:
